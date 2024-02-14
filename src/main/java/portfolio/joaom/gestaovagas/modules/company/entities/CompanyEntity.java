@@ -1,4 +1,4 @@
-package portfolio.joaom.gestaovagas.modules.candidate;
+package portfolio.joaom.gestaovagas.modules.company.entities;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
@@ -11,9 +11,9 @@ import org.hibernate.validator.constraints.Length;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-@Data // Lombok annotation to generate getters and setters for all fields
-@Entity(name = "candidate")
-public class CandidateEntity {
+@Entity(name = "company")
+@Data
+public class CompanyEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -33,9 +33,9 @@ public class CandidateEntity {
     @Length(min = 6, max = 100, message = "Password should have at least 6 characters and at most 100 characters")
     private String password;
 
-    private String description;
+    private String website;
 
-    private String curriculum;
+    private String description;
 
     @CreationTimestamp
     private LocalDateTime createdAt;
