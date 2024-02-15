@@ -22,7 +22,8 @@ public class SecurityConfig {
     public static final String[] ENDPOINTS_WITH_NO_AUTH = {
             "/candidate/",
             "/company/",
-            "/auth/company"
+            "/auth/company",
+            "/candidate/auth"
     };
 
     @Bean // override default configuration
