@@ -28,7 +28,10 @@ public class SecurityConfig {
             "/candidate/",
             "/company/",
             "/company/auth",
-            "/candidate/auth"
+            "/candidate/auth",
+            "/swagger-ui/**",
+            "/v3/api-docs/**",
+            "/swagger-resources/**"
     };
 
     @Bean // override default configuration
