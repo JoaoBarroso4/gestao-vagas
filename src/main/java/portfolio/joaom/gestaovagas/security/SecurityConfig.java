@@ -3,6 +3,7 @@ package portfolio.joaom.gestaovagas.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
@@ -14,15 +15,19 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 
 @Configuration
 //@EnableWebSecurity
+@EnableMethodSecurity
 public class SecurityConfig {
 
     @Autowired
     private SecurityFilter securityFilter;
 
+    @Autowired
+    private SecurityCandidateFilter securityCandidateFilter;
+
     public static final String[] ENDPOINTS_WITH_NO_AUTH = {
             "/candidate/",
             "/company/",
-            "/auth/company",
+            "/company/auth",
             "/candidate/auth"
     };
 
@@ -35,6 +40,7 @@ public class SecurityConfig {
                         .requestMatchers(ENDPOINTS_WITH_NO_AUTH).permitAll()
                         .anyRequest().authenticated()
                 )
+                .addFilterBefore(securityCandidateFilter, BasicAuthenticationFilter.class)
                 .addFilterBefore(securityFilter, BasicAuthenticationFilter.class)
                 .build();
     }
