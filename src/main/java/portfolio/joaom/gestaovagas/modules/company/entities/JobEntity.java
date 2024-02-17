@@ -1,5 +1,6 @@
 package portfolio.joaom.gestaovagas.modules.company.entities;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -22,13 +23,17 @@ public class JobEntity {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
+    @Schema(example = "Software Engineer")
     private String title;
 
+    @Schema(example = "We are looking for a software engineer to join our team.")
     private String description;
 
     @NotBlank(message = "Level is mandatory")
+    @Schema(example = "Junior")
     private String level;
 
+    @Schema(example = "Health insurance, dental insurance, and food allowance.")
     private String benefits;
 
     @ManyToOne()
