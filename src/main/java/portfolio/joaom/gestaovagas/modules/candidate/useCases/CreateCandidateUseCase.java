@@ -5,7 +5,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import portfolio.joaom.gestaovagas.exceptions.UserAlreadyExistsException;
 import portfolio.joaom.gestaovagas.modules.candidate.CandidateEntity;
-import portfolio.joaom.gestaovagas.modules.candidate.controllers.CandidateRepository;
+import portfolio.joaom.gestaovagas.modules.candidate.CandidateRepository;
 
 @Service
 public class CreateCandidateUseCase {

@@ -3,7 +3,7 @@ package portfolio.joaom.gestaovagas.modules.candidate.useCases;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import portfolio.joaom.gestaovagas.modules.candidate.controllers.CandidateRepository;
+import portfolio.joaom.gestaovagas.modules.candidate.CandidateRepository;
 import portfolio.joaom.gestaovagas.modules.candidate.dto.ProfileCandidateResponseDTO;
 
 import java.util.UUID;

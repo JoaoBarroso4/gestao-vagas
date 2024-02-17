@@ -1,4 +1,4 @@
-package portfolio.joaom.gestaovagas.modules.candidate.controllers;
+package portfolio.joaom.gestaovagas.modules.candidate;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import portfolio.joaom.gestaovagas.modules.candidate.CandidateEntity;

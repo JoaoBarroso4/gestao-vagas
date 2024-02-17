@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import portfolio.joaom.gestaovagas.modules.candidate.controllers.CandidateRepository;
+import portfolio.joaom.gestaovagas.modules.candidate.CandidateRepository;
 import portfolio.joaom.gestaovagas.modules.candidate.dto.AuthCandidateRequestDTO;
 import portfolio.joaom.gestaovagas.modules.candidate.dto.AuthCandidateResponseDTO;
 
