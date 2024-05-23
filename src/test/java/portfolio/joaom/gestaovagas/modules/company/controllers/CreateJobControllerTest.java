@@ -16,6 +16,8 @@ import portfolio.joaom.gestaovagas.modules.company.entities.CompanyEntity;
 import portfolio.joaom.gestaovagas.modules.company.repositories.CompanyRepository;
 import portfolio.joaom.gestaovagas.utils.TestUtils;
 
+import java.util.UUID;
+
 import static org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.springSecurity;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -66,5 +68,22 @@ public class CreateJobControllerTest {
                         .header("Authorization", "Bearer " +
                                 TestUtils.generateToken(company.getId())))
                 .andExpect(status().isOk());
+    }
+
+    @Test
+    public void should_not_be_able_to_create_a_new_job_if_company_does_not_exist() throws Exception {
+        var createJobDTO = CreateJobDTO.builder()
+                .benefits("BENEFITS_TEST")
+                .description("DESCRIPTION_TEST")
+                .level("LEVEL_TEST")
+                .build();
+
+        mvc.perform(post("/company/job/")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(TestUtils.objectToJSON(createJobDTO))
+                        .header("Authorization", "Bearer " +
+                                TestUtils.generateToken(UUID.randomUUID())))
+                .andExpect(status().isBadRequest());
+
     }
 }
