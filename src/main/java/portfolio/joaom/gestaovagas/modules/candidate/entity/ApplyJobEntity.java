@@ -1,6 +1,10 @@
 package portfolio.joaom.gestaovagas.modules.candidate.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import portfolio.joaom.gestaovagas.modules.candidate.CandidateEntity;
 import portfolio.joaom.gestaovagas.modules.company.entities.JobEntity;
@@ -9,6 +13,10 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity(name = "apply_jobs")
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class ApplyJobEntity {
 
     @Id
