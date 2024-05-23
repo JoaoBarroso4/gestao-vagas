@@ -14,7 +14,7 @@ import portfolio.joaom.gestaovagas.modules.candidate.dto.AuthCandidateResponseDT
 import javax.naming.AuthenticationException;
 import java.time.Duration;
 import java.time.Instant;
-import java.util.Arrays;
+import java.util.List;
 
 @Service
 public class AuthCandidateUseCase {
@@ -44,7 +44,7 @@ public class AuthCandidateUseCase {
         var token = JWT.create()
                 .withIssuer("portfolio")
                 .withSubject(candidate.getId().toString())
-                .withClaim("roles", Arrays.asList("CANDIDATE"))
+                .withClaim("roles", List.of("CANDIDATE"))
                 .withExpiresAt(expiresIn)
                 .sign(algorithm);
 
