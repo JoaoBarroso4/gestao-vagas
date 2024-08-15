@@ -1,7 +1,7 @@
-package portfolio.joaom.gestaovagas.modules.candidate;
+package portfolio.joaom.gestaovagas.modules.candidate.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import portfolio.joaom.gestaovagas.modules.candidate.CandidateEntity;
+import portfolio.joaom.gestaovagas.modules.candidate.entity.CandidateEntity;
 
 import java.util.Optional;
 import java.util.UUID;

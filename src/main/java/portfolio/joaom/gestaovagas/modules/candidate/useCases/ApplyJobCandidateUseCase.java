@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import portfolio.joaom.gestaovagas.exceptions.JobNotFoundException;
 import portfolio.joaom.gestaovagas.exceptions.UserNotFoundException;
-import portfolio.joaom.gestaovagas.modules.candidate.CandidateRepository;
+import portfolio.joaom.gestaovagas.modules.candidate.repository.CandidateRepository;
 import portfolio.joaom.gestaovagas.modules.candidate.entity.ApplyJobEntity;
 import portfolio.joaom.gestaovagas.modules.candidate.repository.ApplyJobRepository;
 import portfolio.joaom.gestaovagas.modules.company.repositories.JobRepository;

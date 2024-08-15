@@ -1,4 +1,4 @@
-package portfolio.joaom.gestaovagas.modules.candidate;
+package portfolio.joaom.gestaovagas.modules.candidate.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;

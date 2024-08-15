@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-import portfolio.joaom.gestaovagas.modules.candidate.CandidateEntity;
+import portfolio.joaom.gestaovagas.modules.candidate.entity.CandidateEntity;
 import portfolio.joaom.gestaovagas.modules.candidate.useCases.ApplyJobCandidateUseCase;
 import portfolio.joaom.gestaovagas.modules.candidate.useCases.CreateCandidateUseCase;
 import portfolio.joaom.gestaovagas.modules.candidate.useCases.ListAllJobsByFilterUseCase;
@@ -52,6 +52,7 @@ public class CandidateController {
 
     @GetMapping("/")
     @PreAuthorize("hasRole('CANDIDATE')")
+    @SecurityRequirement(name = "jwt_auth")
     public ResponseEntity<Object> get(HttpServletRequest request) {
         var candidateId = (String) request.getAttribute("candidateId");
         try {

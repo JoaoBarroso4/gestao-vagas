@@ -26,8 +26,6 @@ public class SecurityCompanyFilter extends OncePerRequestFilter {
             HttpServletResponse response,
             FilterChain filterChain
     ) throws ServletException, IOException {
-//        SecurityContextHolder.getContext().setAuthentication(null);
-
         String header = request.getHeader("Authorization");
 
         if(request.getRequestURI().startsWith("/company")) {
@@ -47,6 +45,7 @@ public class SecurityCompanyFilter extends OncePerRequestFilter {
 
                 UsernamePasswordAuthenticationToken auth =
                         new UsernamePasswordAuthenticationToken(token.getSubject(), null, grants);
+
                 SecurityContextHolder.getContext().setAuthentication(auth);
             }
         }

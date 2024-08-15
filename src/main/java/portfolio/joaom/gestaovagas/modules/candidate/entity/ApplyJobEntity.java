@@ -6,7 +6,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
-import portfolio.joaom.gestaovagas.modules.candidate.CandidateEntity;
 import portfolio.joaom.gestaovagas.modules.company.entities.JobEntity;
 
 import java.time.LocalDateTime;
