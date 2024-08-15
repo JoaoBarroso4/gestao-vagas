@@ -25,7 +25,7 @@ docker-compose up -d
 ```bash
 mvn spring-boot:run
 ```
-The program will be available at `http://localhost:8080`. Docs at `http://localhost:8080/swagger-ui/index.html/`.
+The program will be available at `http://localhost:8080`. Docs at `http://localhost:8080/swagger-ui/index.html`.
 
 ## Endpoints
 
